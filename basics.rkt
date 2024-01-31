@@ -122,8 +122,8 @@
 ;; Question (not graded): how might you handle it if the
 ;; list had fewer than three elements? 
 (define (third l)
-  (if (>= (length 1) 3)
-    (first(rest(rest 1)))
+  (if (>= (length l) 3)
+    (first(rest(rest l)))
     (error "List must contain more than 3 elements")
 
 ;; TOPIC: RECURSION OVER LISTS
@@ -156,9 +156,9 @@
 ;; specifically cannot use set! to "loop" over l.
 ;; Instead, you must use recursion.
 (define (sum-list l)
-  (if (empty? 1)
+  (if (empty? l)
     0
-    (+ (first 1) (sum-list (rest 1)))))
+    (+ (first l) (sum-list (rest l)))))
 
 ;; PROBLEM 4
 ;; 
@@ -168,10 +168,10 @@
 ;; function.
 (define (max-list l)
   (cond
-    ((empty? 1) -inf.0)
-    ((empty? (rest 1))(first 1))
+    ((empty? l) -inf.0)
+    ((empty? (rest l))(first l))
     (else
-      (max (first 1)(max-list (rest 1))))))
+      (max (first l)(max-list (rest l))))))
 
 ;; OPTIONAL READING -- Primitive recursive functions
 ;; 
