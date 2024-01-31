@@ -124,7 +124,7 @@
 (define (third l)
   (if (>= (length l) 3)
     (first(rest(rest l)))
-    (error "List must contain more than 3 elements")
+    (error "List must contain more than 3 elements")))
 
 ;; TOPIC: RECURSION OVER LISTS
 
