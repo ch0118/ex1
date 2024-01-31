@@ -26,7 +26,10 @@
 ;; Racket function:
 ;;     f(x,y) = x*y + y^2 + x
 ;; assume x,y satisfy (return #t for) number?
-(define (f x y) (+ (* x y) (+ x (y * y))))
+(define (f x y)
+ (if (and (number? x)(number? y))
+  (+ (* x y)(+ (expt y 2) x))
+  (error "Both arguments must be numbers")))
 
 ;; Racket lists
 ;; 
