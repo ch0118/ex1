@@ -2,7 +2,7 @@
 ;;
 ;; Collaboration IS allowed (max group size of three).
 ;; 
-;; Student 1: _________________________
+;; Student 1: Christine Hung
 ;; Student 2: _________________________
 ;; Student 3: _________________________
 ;; 
@@ -27,7 +27,9 @@
 ;;     f(x,y) = x*y + y^2 + x
 ;; assume x,y satisfy (return #t for) number?
 (define (f x y)
-  'todo)
+ (if (and (number? x)(number? y))
+  (+ (* x y)(+ (expt y 2) x))
+  (error "Both arguments must be numbers")))
 
 ;; Racket lists
 ;; 
@@ -120,7 +122,9 @@
 ;; Question (not graded): how might you handle it if the
 ;; list had fewer than three elements? 
 (define (third l)
-  'todo)
+  (if (>= (length 1) 3)
+    (first(rest(rest 1)))
+    (error "List must contain more than 3 elements")
 
 ;; TOPIC: RECURSION OVER LISTS
 
@@ -152,7 +156,9 @@
 ;; specifically cannot use set! to "loop" over l.
 ;; Instead, you must use recursion.
 (define (sum-list l)
-  'todo)
+  (if (empty? 1)
+    0
+    (+ (first 1) (sum-list (rest 1)))))
 
 ;; PROBLEM 4
 ;; 
@@ -161,7 +167,11 @@
 ;; This should also be a simple (primitive) recursive
 ;; function.
 (define (max-list l)
-  'todo)
+  (cond
+    ((empty? 1) -inf.0)
+    ((empty? (rest 1))(first 1))
+    (else
+      (max (first 1)(max-list (rest 1))))))
 
 ;; OPTIONAL READING -- Primitive recursive functions
 ;; 
